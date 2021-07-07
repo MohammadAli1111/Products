@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="729.0" style="-fx-background-color: #011638;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="products.FXMLDocumentController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File" />
+                <Menu mnemonicParsing="false" text="Edit" />
+                <Menu mnemonicParsing="false" text="Help" />
+              </menus>
+            </MenuBar>
+            <TabPane onMouseClicked="#tabAction" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab text="Products Show">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #011638;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="54.0" prefWidth="689.0">
+                                       <children>
+                                          <TextField fx:id="search" layoutX="14.0" layoutY="15.0" prefHeight="25.0" prefWidth="359.0" promptText="Name" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="354.0" AnchorPane.topAnchor="15.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow color="#00fffa" />
+                                             </effect>
+                                          </TextField>
+                                          <ChoiceBox fx:id="choicebox" layoutX="381.0" layoutY="15.0" prefWidth="150.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="15.0">
+                                             <effect>
+                                                <DropShadow color="#00fffa" />
+                                             </effect></ChoiceBox>
+                                          <Button layoutX="538.0" layoutY="15.0" mnemonicParsing="false" onAction="#searchAction" text="Search" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="15.0">
+                                             <effect>
+                                                <DropShadow color="#00fffa" />
+                                             </effect></Button>
+                                          <Button layoutX="598.0" layoutY="15.0" mnemonicParsing="false" onAction="#deleteAction" text="Delete" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="15.0">
+                                             <effect>
+                                                <DropShadow color="#00fffa" />
+                                             </effect></Button>
+                                          <Button layoutX="656.0" layoutY="15.0" mnemonicParsing="false" onAction="#showAll" text="Show All" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="15.0">
+                                             <effect>
+                                                <DropShadow color="#00fffa" />
+                                             </effect>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="#Id" />
+                                              <TableColumn prefWidth="75.0" text="Name" />
+                                                <TableColumn prefWidth="75.0" text="Type" />
+                                                <TableColumn prefWidth="75.0" text="Image" />
+                                                <TableColumn prefWidth="75.0" text="Price" />
+                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                             <effect>
+                                                <DropShadow color="#00fffa" />
+                                             </effect>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Products  New">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    <Label fx:id="newMessages" textFill="#55cd42">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button contentDisplay="RIGHT" maxHeight="165.0" maxWidth="350.0" mnemonicParsing="false" onAction="#selecteNewImage" prefHeight="165.0" prefWidth="350.0" style="-fx-background-radius: 20; -fx-background-color: black;" text="Select Image" textFill="#f5f5f5">
+                                       <graphic>
+                                          <ImageView fx:id="newImageView" fitHeight="156.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/car-604019_1920.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </Button>
+                                    <Label alignment="TOP_LEFT" text="Product Name :" textFill="WHITE" textOverrun="CLIP" VBox.vgrow="NEVER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newName" alignment="CENTER" promptText="Name">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow color="#00fffa" radius="10.002500000000001" width="21.01" />
+                                       </effect>
+                                    </TextField>
+                                    <Label nodeOrientation="LEFT_TO_RIGHT" text="Product Type :" textFill="WHITE" VBox.vgrow="NEVER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newType" alignment="CENTER" promptText="Type">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </TextField>
+                                    <Label text="Product Price : " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Spinner fx:id="newPrice" editable="true" style="-fx-max-width: 3000;">
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect></Spinner>
+                                    <Button mnemonicParsing="false" onAction="#saveProduct" prefHeight="25.0" prefWidth="264.0" text="Save">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Products  Edit">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    <Label fx:id="updateMessages" textFill="#55cd42">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button contentDisplay="RIGHT" maxHeight="165.0" maxWidth="350.0" mnemonicParsing="false" onAction="#selecteUpdateImage" prefHeight="165.0" prefWidth="350.0" style="-fx-background-radius: 20; -fx-background-color: black;" text="Select Image" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fx:id="updateImageView" fitHeight="156.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Desktop/car-604019_1920.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </Button>
+                                    <Label alignment="TOP_LEFT" text="Product Name :" textFill="WHITE" textOverrun="CLIP" VBox.vgrow="NEVER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="updateName" alignment="CENTER" promptText="Name">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </TextField>
+                                    <Label nodeOrientation="LEFT_TO_RIGHT" text="Product Type :" textFill="WHITE" VBox.vgrow="NEVER">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="updateType" alignment="CENTER" promptText="Type">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </TextField>
+                                    <Label text="Product Price : " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Spinner fx:id="updatePrice" editable="true" style="-fx-max-width: 3000;">
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect></Spinner>
+                                    <Button mnemonicParsing="false" onAction="#updateProduct" prefHeight="25.0" prefWidth="264.0" text="Update">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <DropShadow color="#00fffa" />
+                                       </effect>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
